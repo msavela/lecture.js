@@ -1,0 +1,60 @@
+/**
+ * lecture.js theme
+ *
+ * @author Matias Savela
+ * @version 1.0.0
+ */
+pre {
+    background-color: transparent;
+    word-wrap: break-word;
+    margin: 0px;
+    padding: 10px;
+    color: #c5c8c6;
+    font-size: .8em;
+    margin-bottom: 20px;
+}
+
+pre, code {
+    font-family: 'Monaco', courier, monospace;
+    text-align: left;
+}
+
+pre .comment {
+    color: #999;
+}
+
+pre .variable.global,
+pre .variable.class,
+pre .variable.instance {
+    color: #CC6666;
+}
+
+pre .constant.numeric,
+pre .constant.language,
+pre .constant.hex-color,
+pre .keyword.unit {
+    color: #DE663D;
+}
+
+pre .constant,
+pre .entity,
+pre .entity.class,
+pre .support {
+    color: #F0C674;
+}
+
+pre .constant.symbol,
+pre .string {
+    color: #81A2BE;
+}
+
+pre .entity.function,
+pre .support.css-property,
+pre .selector {
+    color: #81A2BE;
+}
+
+pre .keyword,
+pre .storage {
+    color: #06BA8F;
+}

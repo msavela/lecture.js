@@ -1,0 +1,74 @@
+body {
+    /* Recommended font by Google Fonts
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:100" rel="stylesheet" type="text/css"> */
+    font-family: 'Roboto Slab', serif;
+    font-weight: 100;
+}
+
+.keyboard {
+    position: absolute;
+    bottom: 0; right: 0;
+    font-size: 10px;
+    margin: 20px;
+
+    -webkit-transition: all .7s ease;
+       -moz-transition: all .7s ease;
+        -ms-transition: all .7s ease;
+         -o-transition: all .7s ease;
+            transition: all .7s ease;
+
+    -webkit-transform: translateY(200px);
+       -moz-transform: translateY(200px);
+        -ms-transform: translateY(200px);
+         -o-transform: translateY(200px);
+            transform: translateY(200px);
+}
+
+.keyboard.visible {
+    -webkit-transform: none;
+       -moz-transform: none;
+        -ms-transform: none;
+         -o-transform: none;
+            transform: none;
+}
+
+.keyboard ul,
+.keyboard ul li {
+    white-space-collapse: discard;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.keyboard ul {
+    display: block;
+    text-align: center;
+}
+
+.keyboard ul li {
+    display: inline-block;
+    width: 20px; height: 20px;
+    background-color: #f1f1f1;
+    color: #666;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    margin: 2px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .3);
+}
+
+.progress {
+    position: absolute;
+    bottom: 0; left: 0;
+    max-width: 100%;
+    min-width: 0;
+    width: 0;
+    height: 3px;
+    background-color: #E84A5F;
+
+    -webkit-transition: width .7s ease;
+       -moz-transition: width .7s ease;
+        -ms-transition: width .7s ease;
+         -o-transition: width .7s ease;
+            transition: width .7s ease;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
+<head>
+    <title>lecture.js</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <meta name="description" content="lecture.js - A presentation framework"/>
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:100" rel="stylesheet" type="text/css">
+    <link href="https://rawgithub.com/msavela/lecture.js/master/themes/default.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="rainbow/rainbow.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="keyboard" class="keyboard">
+        <ul>
+            <li>&#8593;</li>
+        </ul>
+        <ul>
+            <li>&#8592;</li><!--
+            --><li>&#8595;</li><!--
+            --><li>&#8594;</li>
+        </ul>
+    </div>
+
+    <article class="slides">
+        <section>
+            <div>
+                <h1>lecture.js</h1>
+                <h2>A presentation framework</h2>
+                <p>Use your keybord to navigate &#8594;</p>
+            </div>
+        </section>
+
+        <section data-style="dark" class="dark">
+            <div>
+                <h1>Super small</h1>
+                <h2>No dependencies</h2>
+                <p class="fragment">&lt;2kb <span>(593bytes minified and gzipped)</span></p>
+            </div>
+        </section>
+
+                <section data-style="dark" class="dark">
+            <div>
+                <h1>Easy to use</h1>
+                    <h2>Example presentation</h2>
+
+                    <p>Following markup represents a deck<br/>containing two slides</p>
+                    <pre><code data-language="html">
+&lt;article&gt;
+    &lt;section&gt;
+        &lt;h1&gt;1st slide&lt;/h1&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+        &lt;h1&gt;2nd slide&lt;/h1&gt;
+    &lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+
+                    <p>Insert the following at the end of your<br/>body tag to initialize lecture.js</p>
+
+<pre><code data-language="html">&lt;script src="lecture.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+window.addEventListener("load", function(e) {
+    lecture.init();
+}, false);
+&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section data-style="dark" class="dark">
+            <div>
+                <h1>Look &amp; feel</h1>
+                <h2>Style the presentation with CSS</h2>
+                <p class="fragment">Each slide has set of situational classes</p>
+            </div>
+        </section>
+
+        <section data-style="dark" class="dark">
+            <div>
+                <h1>Plugins</h1>
+                <h2>lecture.js is modular</h2>
+                <p class="fragment">Event-driven approach to easily extend the framework</p>
+            </div>
+        </section>
+
+        <section data-style="documentation" class="documentation">
+            <div>
+                <h2><a href="https://github.com/msavela/lecture.js">See full documentation</a></h2>
+            </div>
+        </section>
+    </article>
+
+    <div class="progress"></div>
+
+    <script src="https://rawgithub.com/msavela/lecture.js/master/src/lecture.js"></script>
+
+    <script src="https://rawgithub.com/msavela/lecture.js-plugins/master/src/lecture.hash.js"></script>
+    <script src="https://rawgithub.com/msavela/lecture.js-plugins/master/src/lecture.progress.js"></script>
+    <script src="https://rawgithub.com/msavela/lecture.js-plugins/master/src/lecture.fragment.js"></script>
+    <script src="https://rawgithub.com/msavela/lecture.js-plugins/master/src/lecture.style.js"></script>
+    
+    <script src="rainbow/rainbow.min.js"></script>
+
+    <script>
+    window.addEventListener("load", function(e) {
+        lecture.on('activate', function(e) {
+            (e.index == 0) && document.querySelector('.keyboard').classList.add('visible');
+        });
+        lecture.on('deactivate', function(e) {
+            document.querySelector('.keyboard').classList.remove('visible');
+        });
+        lecture.init();
+    }, false);
+    </script>
+</body>
+</html>
