@@ -122,3 +122,8 @@ Supported browsers:
 * Google Chrome 31.0+
 * Safari 7.0+
 * Firefox 26.0+
+
+# License
+
+The MIT License (MIT)
+Copyright (c) 2013 Matias Savela, [mati.as](http://mati.as)
