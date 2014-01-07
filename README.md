@@ -126,4 +126,5 @@ Supported browsers:
 # License
 
 The MIT License (MIT)
+
 Copyright (c) 2013 Matias Savela, [mati.as](http://mati.as)
