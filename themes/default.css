@@ -1,0 +1,178 @@
+/* General styles begin */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #06B98F;
+    color: #fff;
+    font-weight: 100;
+    font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: 100;
+    text-align: center;
+    margin: 0; padding: 0;
+}
+
+h1 { font-size: 4em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.8em; }
+h5 { font-size: 1.6em; }
+h6 { font-size: 1.4em; }
+
+a {
+    color: #de663d;
+    text-decoration: none;
+
+    -webkit-transition: color .3s ease;
+       -moz-transition: color .3s ease;
+        -ms-transition: color .3s ease;
+         -o-transition: color .3s ease;
+            transition: color .3s ease;
+}
+
+a:hover {
+    color: #06BA8F;
+}
+
+p { font-size: 1.2em; }
+
+p span {
+    color: rgba(255, 255, 255, .4);
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+ul li,
+ol li {
+    font-size: 1.2em;
+    text-align: left;
+}
+/* General styles end */
+
+/* General slide styles begin */
+article {
+    width: 100%;
+    height: 100%;
+}
+
+section.active { opacity: 1; }
+section {
+    position: absolute;
+    width: 100% ;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    color: rgba(255, 255, 255, .7);
+    opacity: 0;
+
+    /* Internet Explorer 10 */
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
+
+    /* Firefox */
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+
+    /* Safari, Opera, and Chrome */
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+
+    /* W3C */
+    display: flexbox;
+    box-pack: center;
+    box-align: center;
+}
+
+section > div { max-width: 600px; }
+
+section h1 { color: #182533; }
+
+article section.active {
+    opacity: 1;
+}
+
+article,
+article section,
+article section .fragment {
+    -webkit-transition: all .7s ease;
+       -moz-transition: all .7s ease;
+        -ms-transition: all .7s ease;
+         -o-transition: all .7s ease;
+            transition: all .7s ease;
+
+    -webkit-transform: none;
+       -moz-transform: none;
+        -ms-transform: none;
+         -o-transform: none;
+            transform: none;
+}
+
+article section .fragment {
+    opacity: 0;
+}
+
+article section .fragment.visible {
+    opacity: 1;
+}
+/* General slide styles begin */
+
+/* Specific slide styles begin */
+article.dark { background-color: #131C25 !important; }
+section.dark h1 { color: #06BA8F; }
+section.dark { color: rgba(255, 255, 255, .7); }
+
+article.documentation { background-color: #E96838 !important; }
+section.documentation a {
+    display: block;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-transition: background-color .3s ease, color .3s ease;
+       -moz-transition: background-color .3s ease, color .3s ease;
+        -ms-transition: background-color .3s ease, color .3s ease;
+         -o-transition: background-color .3s ease, color .3s ease;
+            transition: background-color .3s ease, color .3s ease;
+}
+
+section.documentation a:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, .2);
+}
+/* Specific slide styles end */
+
+/* Transitions begin */
+article section.before {
+    -webkit-transform: translateX(-100%);
+       -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+         -o-transform: translateX(-100%);
+            transform: translateX(-100%);
+    opacity: 0;
+}
+
+article section.after {
+    -webkit-transform: translateX(100%);
+       -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+         -o-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+}
+/* Transitions end */
