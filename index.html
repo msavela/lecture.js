@@ -110,6 +110,9 @@ window.addEventListener("load", function(e) {
         lecture.on('deactivate', function(e) {
             document.querySelector('.keyboard').classList.remove('visible');
         });
+        lecture.on('progress', function(e) {
+            document.querySelector('.progress').style.width = e.progress + "%";
+        });
         lecture.init();
     }, false);
     </script>
