@@ -34,6 +34,7 @@ Initialize lecture.js on page load:
 
 ```js
 window.addEventListener("load", function(e) {
+	// Add custom event listener(s) here
 	lecture.init();
 }, false);
 ```
