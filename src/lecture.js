@@ -5,7 +5,7 @@
 
 		init: function(element) {
 			this.parent = element || document.querySelector('article');
-			this.deck = this.parent.querySelectorAll('section');
+			this.populate();
 
 			this.dispatch('init') && this.activate(0);
 
@@ -20,24 +20,31 @@
 				element: this.deck[this.index]
 			})) return;
 
+			this.index = n;
+			this.update();
+
+			this.dispatch('activate', {
+				index: this.index,
+				element: this.deck[this.index]
+			});
+		},
+		populate: function() {
+			this.deck = this.parent.querySelectorAll('section');
+		},
+		update: function() {
 			for(var i=0;i<this.deck.length;i++) {
 				this.deck[i].className =
 					this.deck[i].className.replace(
 						RegExp('((active|inactive)|(before|after)(-\\d+)?)', 'g')
 					, '').trim();
 
-				if(i == n)
+				if(i == this.index)
 					this.deck[i].classList.add('active');
 				else {
-					this.deck[i].classList.add('inactive', (i < n) ? 'before' : 'after',
-						((i < n) ? 'before' : 'after') + '-' + Math.abs(i - n));
+					this.deck[i].classList.add('inactive', (i < this.index) ? 'before' : 'after',
+						((i < this.index) ? 'before' : 'after') + '-' + Math.abs(i - this.index));
 				}
 			}
-			this.index = n;
-			this.dispatch('activate', {
-				index: this.index,
-				element: this.deck[this.index]
-			});
 		},
 		next: function() {
 			this.dispatch('next', {
