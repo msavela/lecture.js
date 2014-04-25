@@ -12,7 +12,7 @@
 			return this;
 		},
 		activate: function(n) {
-			if(this.index == n || n < 0 || n > this.deck.length - 1)
+			if(n < 0 || n > this.deck.length - 1)
 				return;
 
 			if(this.index >= 0 && !this.dispatch('deactivate', {
